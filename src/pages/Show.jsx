@@ -13,12 +13,15 @@ export default function Show() {
 
   return (
     <>
-      <header>
-        <img src={store.dataRes.data.image.large} alt="" />
-        <h2>{store.dataRes.data.name} {store.dataRes.data.symbol}</h2>
+      <nav className='cp-nav'>
+        <a href="/">Back</a>
+      </nav>
+      <header className='cp-header'>
+        <h2>{store.dataRes.data.name} ({store.dataRes.data.symbol})</h2>
         <p>{store.dataRes.data.description.en}</p>
       </header>
 
+      <section className='cp-chart'>
       <AreaChart
         width={500}
         height={400}
@@ -36,6 +39,8 @@ export default function Show() {
         <Tooltip />
         <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />
       </AreaChart>
+
+      </section>
 
     </>
 

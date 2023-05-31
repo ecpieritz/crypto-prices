@@ -9,17 +9,31 @@ export default function Home() {
     store.fetchCoins()
   }, [])
   return (
-    <div>
-      <input type="text" value={store.query} onChange={store.setQuery} />
-      {store.coins.map(coin => {
-        return (
-          <div key={coin.id}>
-            <Link to={`/${coin.id}`}>
-              {coin.name}
-            </Link>
-          </div>
-        )
-      })}
-    </div>
+    <>
+      <header className='cp-header'>
+        <h1>Crypto Prices</h1>
+      </header>
+
+      <main>
+        <section className='cp-input'>
+          <h3>Which cryptocurrency are you looking for?</h3>
+          <input type="text" value={store.query} onChange={store.setQuery} />
+        </section>
+        
+        <section className='cp-top'>
+          <h3>Here are the top 7 coins:</h3>
+          {store.coins.map(coin => {
+            return (
+              <div className='cp-top__item' key={coin.id}>
+                <Link to={`/${coin.id}`}>
+                  {coin.name}
+                </Link>
+              </div>
+            )
+          })}
+        </section>
+
+      </main>
+    </>
   );
 }
