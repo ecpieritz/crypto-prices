@@ -12,6 +12,7 @@ export default function Home(props: IHomeProps) {
   }, [])
   return (
     <div>
+      <input type="text" value={store.query} onChange={store.setQuery} />
       {store.coins.map((coin: any) => {
         return (
           <div key={coin.id}>
