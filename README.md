@@ -19,7 +19,7 @@
 - SCSS
 - Javascript
 - TypeScript
-- Reacharts
+- Recharts
 
 ---
 
